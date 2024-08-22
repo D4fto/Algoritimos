@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cu" onclick="clicar()"><img src="https://yt3.googleusercontent.com/ITQFaCkms1aoQmvH9_X_f0BxoKzIEhQIYij-jW0oK2AQWwsS2isrp1Kv0zNjDmnmu8fbQRSou44=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+    <p id="contador">0</p>
+    <button onclick="upgreidar()">upgrade <span id="pr">10</span></button>
+    <p>Cus por segundo <span id="cus">0</span></p>
+    <script>
+        const cu = document.getElementById('cu')
+        const cus = document.getElementById('cus')
+        const cont = document.querySelector('#contador')
+        let cups = 0 
+        let prco = 10
+        let x=true
+        function upgreidar(){
+            if(parseFloat(cont.innerHTML)>=prco){
+                cups+=1
+                cus.innerHTML=cups
+                cont.innerHTML=(parseInt(cont.innerHTML)-prco)
+                prco+=0.1
+                document.querySelector('#pr').innerHTML=prco
+                new Audio('./bora-biilll.mp3').play()
+                return;
+            }
+            new Audio('./e-o-pix-nada-ainda.mp3').play()
+            return;
+            
+        }
+        function clicar(){
+            cont.innerHTML=(parseInt(cont.innerHTML)+1)
+            new Audio('./vou-nada.mp3').play()
+        }
+        setInterval(()=>{
+            cont.innerHTML=(parseInt(cont.innerHTML)+cups)
+            if(x && parseInt(cont.innerHTML)>=1000){
+                new Audio('./la-ele-mil-vezes.mp3').play()
+            }
+        },1000)
+
+    </script>
+</body>
+</html>
